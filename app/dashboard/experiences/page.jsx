@@ -131,7 +131,7 @@ export default function ExperiencesPage() {
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_GROQ_API_KEY}`,
           },
           body: JSON.stringify({
-            model: "llama-3.3-70b-versatile",
+            model: "openai/gpt-oss-120b",
             messages: [
               {
                 role: "system",
@@ -148,7 +148,7 @@ Règles :
                 content: `Reformule cette description de mission pour le poste "${form.job_title}" chez "${form.company}" :\n\n${form.description}`,
               },
             ],
-            max_tokens: 400,
+            max_tokens: 1000,
           }),
         },
       );

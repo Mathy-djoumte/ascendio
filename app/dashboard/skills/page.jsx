@@ -130,7 +130,7 @@ export default function SkillsPage() {
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_GROQ_API_KEY}`,
           },
           body: JSON.stringify({
-            model: "llama-3.3-70b-versatile",
+            model: "openai/gpt-oss-120b",
             messages: [
               {
                 role: "system",
@@ -145,7 +145,7 @@ Les catégories possibles sont : Technique, Soft skill, Outil, Autre`,
                 content: `Voici mes compétences actuelles : ${existingSkills}. Suggère 6 compétences complémentaires que je devrais ajouter à mon profil.`,
               },
             ],
-            max_tokens: 300,
+            max_tokens: 1000,
           }),
         },
       );

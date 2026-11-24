@@ -131,7 +131,7 @@ export default function EducationsPage() {
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_GROQ_API_KEY}`,
           },
           body: JSON.stringify({
-            model: "llama-3.3-70b-versatile",
+            model: "openai/gpt-oss-120b",
             messages: [
               {
                 role: "system",
@@ -148,7 +148,7 @@ Règles :
                 content: `Reformule cette description pour la formation "${form.degree}" en "${form.field_of_study}" à "${form.institution}" :\n\n${form.description}`,
               },
             ],
-            max_tokens: 400,
+            max_tokens: 1000,
           }),
         },
       );

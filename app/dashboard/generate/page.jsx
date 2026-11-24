@@ -164,7 +164,7 @@ export default function GeneratePage() {
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_GROQ_API_KEY}`,
           },
           body: JSON.stringify({
-            model: "llama-3.3-70b-versatile",
+            model: "openai/gpt-oss-120b",
             messages: [
               {
                 role: "system",
@@ -176,7 +176,7 @@ export default function GeneratePage() {
                 content: `Adapte cette accroche pour le poste de "${targetJob}" :\n\n"${summary}"\n\nProfile : ${profile?.first_name} ${profile?.last_name}${profile?.city ? `, basé(e) à ${profile.city}` : ""}.`,
               },
             ],
-            max_tokens: 300,
+            max_tokens: 1000,
           }),
         },
       );
